@@ -1,10 +1,13 @@
 import Index from "./src/Index";
 import { NavigationContainer } from "@react-navigation/native";
+import { FC } from "react";
+import { navigationRef } from "./RootNavigation";
 
-export default function App() {
+const App: FC = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Index />
     </NavigationContainer>
   );
-}
+};
+export default App;

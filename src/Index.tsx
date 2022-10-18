@@ -1,12 +1,17 @@
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { FC } from "react";
-import { Text, View } from "react-native";
-import { styles } from "./styles";
+import { BootRoutes } from "./modules/Boot/Routes";
+import { EstablishmentsRoutes } from "./modules/Establishments/Routes";
+import { createNavigationContainerRef } from "@react-navigation/native";
+
+const Stack = createNativeStackNavigator();
 
 const Index: FC = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <Stack.Navigator>
+      {BootRoutes}
+      {EstablishmentsRoutes}
+    </Stack.Navigator>
   );
 };
 
